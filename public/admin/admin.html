@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | ADNA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Adaugă stilurile necesare pentru pagina de admin */
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="../index.html"><img src="../images/logo.png" class="logo" alt="ADNA"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#" id="logoutButton">Logout</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>Admin Panel</h2>
+        <div id="message" class="message"></div>
+        <h3>Adaugă Produs</h3>
+        <form id="addProductForm">
+            <input type="text" id="productName" placeholder="Nume Produs" required>
+            <input type="number" id="productPrice" placeholder="Preț Produs" required>
+            <input type="text" id="productDescription" placeholder="Descriere Produs" required>
+            <button type="submit">Adaugă Produs</button>
+        </form>
+
+        <h3>Produse Existente</h3>
+        <div id="productList"></div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

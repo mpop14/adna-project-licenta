@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contul meu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html" class="active">Contul meu</a></li>
+                <li><a href="#" id="logoutButton">Logout</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="profile">
+        <h2>Bine ai venit la Contul meu!</h2>
+        <p>Aici poți vedea și actualiza informațiile tale.</p>
+        <!-- Poți adăuga mai multe detalii despre contul utilizatorului aici -->
+    </section>
+
+    <script>
+        // Adaugă evenimentul pentru butonul de logout cu confirmare
+        document.getElementById('logoutButton').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Afișează o fereastră de confirmare
+            const confirmLogout = confirm("Sunteți sigur/ă de această acțiune de a vă dezautentifica?");
+            if (confirmLogout) {
+                localStorage.removeItem('token');
+                window.location.href = '/index.html';
+            }
+        });
+
+        // Verifică dacă token-ul este prezent în LocalStorage
+        const token = localStorage.getItem('token');
+        if (!token) {
+            // Dacă token-ul lipsește, redirecționează utilizatorul către pagina index.html
+            window.location.href = '/index.html';
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
